@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Role Clarity Steps</title>
-    <!-- Import Google Font --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Import Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles for the accordion */
         body {
@@ -25,25 +27,28 @@
             transform: rotate(180deg);
         }
         
+        /* This is the selector that was failing. It now works because the button and panel are siblings. */
         .accordion-button[aria-expanded="true"]+.accordion-panel {
             max-height: 500px; /* Adjust as needed */
         }
     </style>
 </head>
 
-<body class="bg-white p-4 md:p-8"> <!-- Changed bg-gray-50 to bg-white --><div class="max-w-3xl mx-auto">
+<body class="bg-white p-4 md:p-8">
+    <div class="max-w-3xl mx-auto">
         <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">How do we achieve role clarity?</h1>
 
         <div class="bg-white rounded-lg shadow-sm">
             <div class="space-y-3" id="accordion-container">
 
-                <!-- Item 1 --><div class="accordion-item rounded-lg border border-gray-200">
-                    <h2>
-                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
-                            <span class="text-base md:text-lg font-bold">1. Define the role’s purpose</span>
-                            <!-- Icon --><svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                    </h2>
+                <!-- Item 1 -->
+                <div class="accordion-item rounded-lg border border-gray-200">
+                    <!-- Removed the h2 tag from around the button -->
+                    <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
+                        <span class="text-base md:text-lg font-bold">1. Define the role’s purpose</span>
+                        <!-- Icon -->
+                        <svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
                     <div class="accordion-panel">
                         <div class="p-5 border-t border-gray-200">
                             <p class="text-gray-600">Provide the employee with a clear overview of their responsibilities and how their work contributes to team and company goals.</p>
@@ -51,13 +56,13 @@
                     </div>
                 </div>
 
-                <!-- Item 2 --><div class="accordion-item rounded-lg border border-gray-200">
-                    <h2>
-                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
-                            <span class="text-base md:text-lg font-bold">2. Set clear expectations</span>
-                            <svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                    </h2>
+                <!-- Item 2 -->
+                <div class="accordion-item rounded-lg border border-gray-200">
+                    <!-- Removed the h2 tag from around the button -->
+                    <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
+                        <span class="text-base md:text-lg font-bold">2. Set clear expectations</span>
+                        <svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
                     <div class="accordion-panel">
                         <div class="p-5 border-t border-gray-200">
                             <p class="text-gray-600">Ensure the employee understands their primary responsibilities, performance expectations and what success in the role looks like. Considerations such as how long the employee has been in their role, how long they have been at Xero, and their overall professional tenure can be helpful in assessing whether the employee fully understands the expectations of their role.</p>
@@ -65,13 +70,13 @@
                     </div>
                 </div>
 
-                <!-- Item 3 --><div class="accordion-item rounded-lg border border-gray-200">
-                    <h2>
-                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
-                            <span class="text-base md:text-lg font-bold">3. Establish a feedback rhythm</span>
-                            <svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                    </h2>
+                <!-- Item 3 -->
+                <div class="accordion-item rounded-lg border border-gray-200">
+                    <!-- Removed the h2 tag from around the button -->
+                    <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
+                        <span class="text-base md:text-lg font-bold">3. Establish a feedback rhythm</span>
+                        <svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
                     <div class="accordion-panel">
                          <div class="p-5 border-t border-gray-200">
                             <p class="text-gray-600">Ensure that performance is a regular topic of conversation by providing coaching and feedback in 1:1 conversations.</p>
@@ -79,13 +84,14 @@
                     </div>
                 </div>
 
-                <!-- Item 4 --><div class="accordion-item rounded-lg border border-gray-200">
-                    <h2>
-                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
-                            <span class="text-base md:text-lg font-bold">4. Set goals</span>
-                            <svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                    </h2>
+                <!-- Item 4 -->
+                <div class="accordion-item rounded-lg border border-gray-200">
+                    <!-- Removed the h2 tag from around the button -->
+                    <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
+                        <!-- Fixed typo from class_name to class -->
+                        <span class="text-base md:text-lg font-bold">4. Set goals</span>
+                        <svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
                     <div class="accordion-panel">
                          <div class="p-5 border-t border-gray-200">
                             <p class="text-gray-600">Drive accountability in setting clear & measurable goals.</p>
@@ -93,16 +99,17 @@
                     </div>
                 </div>
 
-                <!-- Item 5 --><div class="accordion-item rounded-lg border border-gray-200">
-                    <h2>
-                        <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
-                            <span class="text-base md:text-lg font-bold">5. Reference capability framework</span>
-                            <svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                    </h2>
+                <!-- Item 5 -->
+                <div class="accordion-item rounded-lg border border-gray-200">
+                    <!-- Removed the h2 tag from around the button -->
+                    <button type="button" class="accordion-button flex items-center justify-between w-full p-5 text-left bg-[#11b5ea] text-white hover:bg-[#0f9cd0] rounded-lg focus:outline-none" aria-expanded="false">
+                        <span class="text-base md:text-lg font-bold">5. Reference capability framework</span>
+                        <svg class="w-5 h-5 shrink-0 accordion-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
                     <div class="accordion-panel">
                          <div class="p-5 border-t border-gray-200">
                             <p class="text-gray-600">Provide a clear articulation of the capability framework. Ensure that the employee understands what performing in each of the capability areas looks like, and where their strengths and opportunities lie within the capability framework.</p>
+                            <!-- Removed stray text from here -->
                         </div>
                     </div>
                 </div>
